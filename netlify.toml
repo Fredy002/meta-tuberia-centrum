@@ -3,6 +3,15 @@
   publish = "build/client"
   functions = "netlify/functions"
 
+# Serve static assets directly (CSS, JS, images, fonts, etc.)
+# This must come BEFORE the catch-all redirect
+[[redirects]]
+  from = "/build/*"
+  to = "/build/:splat"
+  status = 200
+  force = false
+
+# Serve all other routes through Remix server
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/server"
