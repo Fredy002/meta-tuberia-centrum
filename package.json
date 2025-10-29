@@ -4,6 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
+    "prebuild": "node -e \"require('fs').mkdirSync('build/client', { recursive: true })\"",
     "build": "remix build",
     "dev": "remix dev",
     "start": "remix-serve ./build/index.js",
