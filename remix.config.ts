@@ -2,6 +2,10 @@ import type { AppConfig } from '@remix-run/dev';
 
 const config: AppConfig = {
   ignoredRouteFiles: ["**/.*"],
+  // Ensure client assets go to build/client (Netlify publish)
+  assetsBuildDirectory: "build/client",
+  publicPath: "/build/",
+  serverBuildPath: "build/index.js",
   future: {
     v3_fetcherPersist: true,
     v3_lazyRouteDiscovery: true,
